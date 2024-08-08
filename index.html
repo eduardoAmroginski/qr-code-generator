@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Preencha o formulário e para criar o QR Code.">
     <title>Gerador de Qr code</title>
     <link rel="stylesheet" href="src/assets/css/style.css" />
   </head>
@@ -10,20 +11,23 @@
     <main class="wrapper">
       <header>
         <h1>Gerador de QR Code</h1>
-        <p>Cole uma url ou digite um texto para criar o QR Code</p>
+        <p aria-hidden="true" id="description">Cole uma url ou digite um texto para criar o QR Code.</p>
       </header>
-      <form class="form">
+      <form class="form" aria-label="Formulário para gerar o qr code.">
+        <label for="qrInput" aria-hidden="true">Texto ou URL para o QR Code</label>
         <input
           type="text"
           spellcheck="false"
           id="qrInput"
           name="qrInput"
           placeholder="Digite um texto ou um link"
+          aria-describedby="qrInputHelp"
         />
+        <small aria-hidden="true" id="qrInputHelp">Insira o texto ou URL que deseja converter em QR Code.</small>
         <button type="submit">Gerar QR Code</button>
       </form>
       <div class="qr-code">
-        <img src="" alt="qr-code" />
+        <img aria-hidden="true" src="" alt="Imagem do QR Code gerado" alt="qr-code" aria-live="polite" />
       </div>
     </main>
     <script src="src/assets/js/script.js"></script>

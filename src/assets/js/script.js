@@ -22,6 +22,7 @@ form.addEventListener("submit", (event) => {
     qrImg.addEventListener("load",() => {
         wrapper.classList.add("active");
         generateBtn.innerText = "QR Code Gerado";
+        qrImg.removeAttribute("aria-hidden")
     })
 })
 
